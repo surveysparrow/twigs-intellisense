@@ -4,5 +4,7 @@
   "workspaces": [
     "packages/*"
   ],
-  "scripts": {}
+  "scripts": {
+    "build-plugin": "cd packages/plugin && npm run build"
+  }
 }
