@@ -1,11 +1,14 @@
 {
   "name": "twigs-intellisense-plugin",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Provides intellisense for the Twigs components",
-  "main": "./out",
+  "main": "./out/index.js",
   "engines": {
     "vscode": "^1.58.0"
   },
+  "files": [
+    "./out"
+  ],
   "scripts": {
     "dev": "tsc -w",
     "build": "tsc",
