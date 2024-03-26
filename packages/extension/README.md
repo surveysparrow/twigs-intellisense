@@ -1,22 +1,40 @@
 # Twigs Intellisense
 
-Twigs CSS IntelliSense enhances the Twigs development experience by providing Visual Studio Code users with advanced features such as autocomplete, easy access to the Twigs UI documentation from within VSCode, color palette reference for background colors.
+Twigs IntelliSense enhances the Twigs development experience by providing Visual Studio Code users with advanced features such as autocomplete, easy access to the Twigs UI documentation from VSCode command palette and color swatch reference for color variables.
+
+## Installation
+
+**[Install via the Visual Studio Code Marketplace →](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)**
+
+In order for the extension to activate you must have [`Twigs` installed](https://twigs.surveysparrow.com/docs/getting-started) and a [Twigs config file](https://twigs.surveysparrow.com/docs/theming) named `twigs.config.{js,ts}` in your workspace root directory.
 
 ## Features
 
-1. Auto Complete
-2. Easy Access to Twigs UI documentation using Command Palette
-3. Color palette reference for background colors
+### Autocomplete
 
-## Requirements
+Intelligent suggestions with values for Twigs variables.
 
-TWIGS - [Installation](https://twigs.surveysparrow.com/docs/getting-started)
+<img src="https://static.surveysparrow.com/site/twigs/autocomplete.png" alt="intellisense-png" />
 
-## Known Issues
+### Quick Access to Twigs Docs
 
-Suggestions might differ or not show up with lint errors sometimes.
+Easy access to Twigs docs from VSCode command palette.
 
-## Release Notes
-### 1.0.0
+<img src="https://static.surveysparrow.com/site/twigs/twigs-ui-docs.png" alt="twigs-ui-docs-png" />
 
-Initial release of Twigs Intellisense
+Press (Ctrl + Shift + P) in windows or (Cmd + Shift + P) in mac to open Command Palette. Search for Twigs UI Docs to list all the components. Select the item to redirect to Twigs Documentation.
+
+### Color Preview
+
+See the color preview on the suggestions.
+
+<img src="https://static.surveysparrow.com/site/twigs/color-swatch.png" alt="color-swatch" />
+
+## Troubleshooting
+
+If you’re having issues getting the IntelliSense features to activate, there are a few things you can check:
+
+- Reload VSCode. To reload Press (Ctrl + Shift + P) in windows or (Cmd + Shift + P). Select Reload Window.
+- Ensure that you have a Twigs config file in your workspace and that this is named `twigs.config.{js,ts}`. Check out the Twigs documentation for details on [creating a config file](https://twigs.surveysparrow.com/docs/theming).
+- Ensure that the `Twigs` module is installed in your workspace, via `npm`, `yarn`.
+- Make sure your VS Code settings aren’t causing your Twigs config file to be hidden/ignored, for example via the `files.exclude` or `files.watcherExclude` settings.

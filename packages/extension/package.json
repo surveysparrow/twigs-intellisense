@@ -11,6 +11,7 @@
     "type": "git",
     "url": "https://github.com/surveysparrow/twigs-intellisense"
   },
+  "icon": "assets/twigs-favicon.png",
   "categories": [
     "Other"
   ],
