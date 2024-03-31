@@ -1,6 +1,6 @@
 # Twigs Intellisense
 
-Twigs IntelliSense enhances the Twigs development experience by providing Visual Studio Code users with advanced features such as autocomplete, easy access to the Twigs UI documentation from VSCode command palette and color swatch reference for color variables.
+Twigs IntelliSense enhances the Twigs development experience by providing Visual Studio Code users with advanced features such as autocomplete, easy access to the Twigs components documentation from VSCode command palette and color swatch reference for color variables.
 
 ## Installation
 
@@ -12,7 +12,7 @@ In order for the extension to activate you must have [`Twigs` installed](https:/
 
 ### Autocomplete
 
-Intelligent suggestions with values for Twigs variables.
+Intelligent suggestions with values for Twigs theme variables.
 
 <img src="https://static.surveysparrow.com/site/twigs/autocomplete.png" alt="intellisense-png" />
 
@@ -22,7 +22,7 @@ Easy access to Twigs docs from VSCode command palette.
 
 <img src="https://static.surveysparrow.com/site/twigs/twigs-ui-docs.png" alt="twigs-ui-docs-png" />
 
-Press (Ctrl + Shift + P) in windows or (Cmd + Shift + P) in mac to open Command Palette. Search for Twigs UI Docs to list all the components. Select the item to redirect to Twigs Documentation.
+Press (Ctrl + Shift + P) in windows or (Cmd + Shift + P) in mac to open Command Palette. Search for Twigs Docs to list all the components. Select the item to redirect to Twigs Documentation.
 
 ### Color Preview
 

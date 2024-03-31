@@ -45,8 +45,7 @@ function activate(context) {
     vscode.window.showInformationMessage('Twigs intellisense is now active in your project!');
 
     commands.forEach(command => {
-      const commandName = command.command;
-      const link = command.link;
+      const { command: commandName, link } = command;
       const commandDisposable = vscode.commands.registerCommand(commandName, () => {
         vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(link));
       });

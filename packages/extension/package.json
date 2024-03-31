@@ -24,223 +24,223 @@
     "commands": [
       {
         "command": "extension.twigsDocsAccordian",
-        "category": "Twigs UI Docs",
+        "category": "Twigs Docs",
         "title": "Accordion",
         "link": "https://twigs.surveysparrow.com/docs/components/accordion"
       },
       {
         "command": "extension.twigsDocsAlertDialog",
-        "category": "Twigs UI Docs",
+        "category": "Twigs Docs",
         "title": "Alert Dialog",
         "link": "https://twigs.surveysparrow.com/docs/components/alert-dialog"
       },
       {
         "command": "extension.twigsDocsAlert",
-        "category": "Twigs UI Docs",
+        "category": "Twigs Docs",
         "title": "Alert",
         "link": "https://twigs.surveysparrow.com/docs/components/alert"
       },
       {
         "command": "extension.twigsDocsAvatar",
-        "category": "Twigs UI Docs",
+        "category": "Twigs Docs",
         "title": "Avatar",
         "link": "https://twigs.surveysparrow.com/docs/components/avatar"
       },
       {
         "command": "extension.twigsDocBox",
-        "category": "Twigs UI Docs",
+        "category": "Twigs Docs",
         "title": "Box",
         "link": "https://twigs.surveysparrow.com/docs/components/box"
       },
       {
         "command": "extension.twigsDocButton",
-        "category": "Twigs UI Docs",
+        "category": "Twigs Docs",
         "title": "Button",
         "link": "https://twigs.surveysparrow.com/docs/components/button"
       },
       {
         "command": "extension.twigsDocCalendarRange",
-        "category": "Twigs UI Docs",
+        "category": "Twigs Docs",
         "title": "Calendar Range",
         "link": "https://twigs.surveysparrow.com/docs/components/calendar-range"
       },
       {
         "command": "extension.twigsDocCalendar",
-        "category": "Twigs UI Docs",
+        "category": "Twigs Docs",
         "title": "Calendar",
         "link": "https://twigs.surveysparrow.com/docs/components/calendar"
       },
       {
         "command": "extension.twigsDocCheckBox",
-        "category": "Twigs UI Docs",
+        "category": "Twigs Docs",
         "title": "Checkbox",
         "link": "https://twigs.surveysparrow.com/docs/components/checkbox"
       },
       {
         "command": "extension.twigsDocChip",
-        "category": "Twigs UI Docs",
+        "category": "Twigs Docs",
         "title": "Chip",
         "link": "https://twigs.surveysparrow.com/docs/components/chip"
       },
       {
         "command": "extension.twigsDocDatePicker",
-        "category": "Twigs UI Docs",
+        "category": "Twigs Docs",
         "title": "Date Picker",
         "link": "https://twigs.surveysparrow.com/docs/components/datepicker"
       },
       {
         "command": "extension.twigsDocDialog",
-        "category": "Twigs UI Docs",
+        "category": "Twigs Docs",
         "title": "Dialog",
         "link": "https://twigs.surveysparrow.com/docs/components/dialog"
       },
       {
         "command": "extension.twigsDocDialogsManager",
-        "category": "Twigs UI Docs",
+        "category": "Twigs Docs",
         "title": "Dialogs Manager",
         "link": "https://twigs.surveysparrow.com/docs/components/dialogs-manager"
       },
       {
         "command": "extension.twigsDocDrawer",
-        "category": "Twigs UI Docs",
+        "category": "Twigs Docs",
         "title": "Drawer",
         "link": "https://twigs.surveysparrow.com/docs/components/drawer"
       },
       {
         "command": "extension.twigsDocDropdown",
-        "category": "Twigs UI Docs",
+        "category": "Twigs Docs",
         "title": "Dropdown",
         "link": "https://twigs.surveysparrow.com/docs/components/dropdown"
       },
       {
         "command": "extension.twigsDocFlex",
-        "category": "Twigs UI Docs",
+        "category": "Twigs Docs",
         "title": "Flex",
         "link": "https://twigs.surveysparrow.com/docs/components/flex"
       },
       {
         "command": "extension.twigsDocFormHelperText",
-        "category": "Twigs UI Docs",
+        "category": "Twigs Docs",
         "title": "Form Helper Text",
         "link": "https://twigs.surveysparrow.com/docs/components/form-helper-text"
       },
       {
         "command": "extension.twigsDocFormInput",
-        "category": "Twigs UI Docs",
+        "category": "Twigs Docs",
         "title": "Form Input",
         "link": "https://twigs.surveysparrow.com/docs/components/form-input"
       },
       {
         "command": "extension.twigsDocFormLabel",
-        "category": "Twigs UI Docs",
+        "category": "Twigs Docs",
         "title": "Form Label",
         "link": "https://twigs.surveysparrow.com/docs/components/form-label"
       },
       {
         "command": "extension.twigsDocGrid",
-        "category": "Twigs UI Docs",
+        "category": "Twigs Docs",
         "title": "Grid",
         "link": "https://twigs.surveysparrow.com/docs/components/grid"
       },
       {
         "command": "extension.twigsDocHeading",
-        "category": "Twigs UI Docs",
+        "category": "Twigs Docs",
         "title": "Heading",
         "link": "https://twigs.surveysparrow.com/docs/components/heading"
       },
       {
         "command": "extension.twigsDocHoverCard",
-        "category": "Twigs UI Docs",
+        "category": "Twigs Docs",
         "title": "Hover Card",
         "link": "https://twigs.surveysparrow.com/docs/components/hovercard"
       },
       {
         "command": "extension.twigsDocInput",
-        "category": "Twigs UI Docs",
+        "category": "Twigs Docs",
         "title": "Input",
         "link": "https://twigs.surveysparrow.com/docs/components/input"
       },
       {
         "command": "extension.twigsDocPagination",
-        "category": "Twigs UI Docs",
+        "category": "Twigs Docs",
         "title": "Pagination",
         "link": "https://twigs.surveysparrow.com/docs/components/pagination"
       },
       {
         "command": "extension.twigsDocPopover",
-        "category": "Twigs UI Docs",
+        "category": "Twigs Docs",
         "title": "Popover",
         "link": "https://twigs.surveysparrow.com/docs/components/popover"
       },
       {
         "command": "extension.twigsDocSelect",
-        "category": "Twigs UI Docs",
+        "category": "Twigs Docs",
         "title": "Select",
         "link": "https://twigs.surveysparrow.com/docs/components/select"
       },
       {
         "command": "extension.twigsDocSlider",
-        "category": "Twigs UI Docs",
+        "category": "Twigs Docs",
         "title": "Slider",
         "link": "https://twigs.surveysparrow.com/docs/components/slider"
       },
       {
         "command": "extension.twigsDocStepper",
-        "category": "Twigs UI Docs",
+        "category": "Twigs Docs",
         "title": "Stepper",
         "link": "https://twigs.surveysparrow.com/docs/components/stepper"
       },
       {
         "command": "extension.twigsDocSwitch",
-        "category": "Twigs UI Docs",
+        "category": "Twigs Docs",
         "title": "Switch",
         "link": "https://twigs.surveysparrow.com/docs/components/switch"
       },
       {
         "command": "extension.twigsDocTabs",
-        "category": "Twigs UI Docs",
+        "category": "Twigs Docs",
         "title": "Tabs",
         "link": "https://twigs.surveysparrow.com/docs/components/tabs"
       },
       {
         "command": "extension.twigsDocText",
-        "category": "Twigs UI Docs",
+        "category": "Twigs Docs",
         "title": "Text",
         "link": "https://twigs.surveysparrow.com/docs/components/text"
       },
       {
         "command": "extension.twigsDocTextarea",
-        "category": "Twigs UI Docs",
+        "category": "Twigs Docs",
         "title": "Textarea",
         "link": "https://twigs.surveysparrow.com/docs/components/textarea"
       },
       {
         "command": "extension.twigsDocToast",
-        "category": "Twigs UI Docs",
+        "category": "Twigs Docs",
         "title": "Toast",
         "link": "https://twigs.surveysparrow.com/docs/components/toast"
       },
       {
         "command": "extension.twigsDocTooltip",
-        "category": "Twigs UI Docs",
+        "category": "Twigs Docs",
         "title": "Tooltip",
         "link": "https://twigs.surveysparrow.com/docs/components/tooltip"
       },
       {
         "command": "extension.twigsDocGettingStarted",
-        "category": "Twigs UI Docs",
+        "category": "Twigs Docs",
         "title": "Getting Started",
         "link": "https://twigs.surveysparrow.com/docs/getting-started"
       },
       {
         "command": "extension.twigsDocThemes",
-        "category": "Twigs UI Docs",
+        "category": "Twigs Docs",
         "title": "Themes",
         "link": "https://twigs.surveysparrow.com/docs/theming"
       },
       {
         "command": "extension.twigsDocIcons",
-        "category": "Twigs UI Docs",
+        "category": "Twigs Docs",
         "title": "Icons",
         "link": "https://twigs.surveysparrow.com/docs/icons"
       }
