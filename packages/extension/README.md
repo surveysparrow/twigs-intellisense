@@ -4,9 +4,9 @@ Twigs IntelliSense enhances the Twigs development experience by providing Visual
 
 ## Installation
 
-**[Install via the Visual Studio Code Marketplace →](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)**
+**[Install via the Visual Studio Code Marketplace →](https://marketplace.visualstudio.com/items?itemName=SurveySparrow.twigs-intellisense)**
 
-In order for the extension to activate you must have [`Twigs` installed](https://twigs.surveysparrow.com/docs/getting-started) and a [Twigs config file](https://twigs.surveysparrow.com/docs/theming) named `twigs.config.{js,ts}` in your workspace root directory.
+In order for the extension to activate you must have [`Twigs` installed](https://twigs.surveysparrow.com/docs/getting-started) and a [Twigs config file](https://twigs.surveysparrow.com/docs/theming/#customize-theme) named `twigs.config.{js,ts}` in your workspace root directory.
 
 ## Features
 
@@ -35,6 +35,6 @@ See the color preview on the suggestions.
 If you’re having issues getting the IntelliSense features to activate, there are a few things you can check:
 
 - Reload VSCode. To reload Press (Ctrl + Shift + P) in windows or (Cmd + Shift + P). Select Reload Window.
-- Ensure that you have a Twigs config file in your workspace and that this is named `twigs.config.{js,ts}`. Check out the Twigs documentation for details on [creating a config file](https://twigs.surveysparrow.com/docs/theming).
+- Ensure that you have a Twigs config file in your workspace and that this is named `twigs.config.{js,ts}`. Check out the Twigs documentation for details on [creating a config file](https://twigs.surveysparrow.com/docs/theming/#customize-theme).
 - Ensure that the `Twigs` module is installed in your workspace, via `npm`, `yarn`.
 - Make sure your VS Code settings aren’t causing your Twigs config file to be hidden/ignored, for example via the `files.exclude` or `files.watcherExclude` settings.
