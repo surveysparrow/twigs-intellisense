@@ -1,6 +1,6 @@
-# Twigs Intellisense
+# Twigs IntelliSense
 
-Twigs IntelliSense enhances the Twigs development experience by providing Visual Studio Code users with advanced features such as autocomplete, easy access to the Twigs components documentation from VSCode command palette and color swatch reference for color variables.
+Twigs IntelliSense enhances the Twigs development experience for Visual Studio Code users with advanced features including autocomplete, seamless access to Twigs components documentation from the VSCode command palette, and a color swatch reference for color variables.
 
 ## Installation
 
