@@ -243,6 +243,12 @@
         "category": "Twigs Docs",
         "title": "Icons",
         "link": "https://twigs.surveysparrow.com/docs/icons"
+      },
+      {
+        "command": "extension.twigsDocEditor",
+        "category": "Twigs Docs",
+        "title": "Editor",
+        "link": "https://twigs.surveysparrow.com/docs/category/editor"
       }
     ],
     "typescriptServerPlugins": [
