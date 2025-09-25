@@ -113,6 +113,12 @@
         "link": "https://twigs.surveysparrow.com/docs/components/dropdown"
       },
       {
+        "command": "extension.twigsDocEditor",
+        "category": "Twigs Docs",
+        "title": "Editor",
+        "link": "https://twigs.surveysparrow.com/docs/category/editor"
+      },
+      {
         "command": "extension.twigsDocFlex",
         "category": "Twigs Docs",
         "title": "Flex",
@@ -155,10 +161,34 @@
         "link": "https://twigs.surveysparrow.com/docs/components/hovercard"
       },
       {
+        "command": "extension.twigsDocIconButton",
+        "category": "Twigs Docs",
+        "title": "Icon Button",
+        "link": "https://twigs.surveysparrow.com/docs/components/icon-button"
+      },
+      {
+        "command": "extension.twigsDocImage",
+        "category": "Twigs Docs",
+        "title": "Image",
+        "link": "https://twigs.surveysparrow.com/docs/components/image"
+      },
+      {
         "command": "extension.twigsDocInput",
         "category": "Twigs Docs",
         "title": "Input",
         "link": "https://twigs.surveysparrow.com/docs/components/input"
+      },
+      {
+        "command": "extension.twigsDocLineLoader",
+        "category": "Twigs Docs",
+        "title": "Line Loader",
+        "link": "https://twigs.surveysparrow.com/docs/components/line-loader"
+      },
+      {
+        "command": "extension.twigsDocLink",
+        "category": "Twigs Docs",
+        "title": "Link",
+        "link": "https://twigs.surveysparrow.com/docs/components/link"
       },
       {
         "command": "extension.twigsDocPagination",
@@ -173,16 +203,40 @@
         "link": "https://twigs.surveysparrow.com/docs/components/popover"
       },
       {
+        "command": "extension.twigsDocRadio",
+        "category": "Twigs Docs",
+        "title": "Radio",
+        "link": "https://twigs.surveysparrow.com/docs/components/radio"
+      },
+      {
         "command": "extension.twigsDocSelect",
         "category": "Twigs Docs",
         "title": "Select",
         "link": "https://twigs.surveysparrow.com/docs/components/select"
       },
       {
+        "command": "extension.twigsDocSeparator",
+        "category": "Twigs Docs",
+        "title": "Separator",
+        "link": "https://twigs.surveysparrow.com/docs/components/separator"
+      },
+      {
         "command": "extension.twigsDocSlider",
         "category": "Twigs Docs",
         "title": "Slider",
         "link": "https://twigs.surveysparrow.com/docs/components/slider"
+      },
+      {
+        "command": "extension.twigsDocSplitButton",
+        "category": "Twigs Docs",
+        "title": "Split Button",
+        "link": "https://twigs.surveysparrow.com/docs/components/split-button"
+      },
+      {
+        "command": "extension.twigsDocStack",
+        "category": "Twigs Docs",
+        "title": "Stack",
+        "link": "https://twigs.surveysparrow.com/docs/components/stack"
       },
       {
         "command": "extension.twigsDocStepper",
@@ -195,6 +249,12 @@
         "category": "Twigs Docs",
         "title": "Switch",
         "link": "https://twigs.surveysparrow.com/docs/components/switch"
+      },
+      {
+        "command": "extension.twigsDocTable",
+        "category": "Twigs Docs",
+        "title": "Table",
+        "link": "https://twigs.surveysparrow.com/docs/components/table"
       },
       {
         "command": "extension.twigsDocTabs",
@@ -245,10 +305,16 @@
         "link": "https://twigs.surveysparrow.com/docs/icons"
       },
       {
-        "command": "extension.twigsDocEditor",
+        "command": "extension.twigsDocTools",
         "category": "Twigs Docs",
-        "title": "Editor",
-        "link": "https://twigs.surveysparrow.com/docs/category/editor"
+        "title": "Tools",
+        "link": "https://twigs.surveysparrow.com/docs/tools"
+      },
+      {
+        "command": "extension.twigsDocUpgradeGuide",
+        "category": "Twigs Docs",
+        "title": "Upgrade Guide",
+        "link": "https://twigs.surveysparrow.com/docs/upgrade-guide"
       }
     ],
     "typescriptServerPlugins": [

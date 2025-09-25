@@ -158,7 +158,7 @@ function init(modules: { typescript: typeof import("typescript/lib/tsserverlibra
       };
 
       // Modify the completion list
-      prior.entries = getModifiedPriorEntries(prior.entries, propertyObj, themeProperty, propertyName, extendedProperties);
+      prior.entries = getModifiedPriorEntries(prior.entries, propertyObj, themeProperty, extendedProperties);
 
       // Add the extended properties to the completion list if they exist
       if (twigsConfig && typeof twigsConfig == 'object') {
@@ -172,7 +172,7 @@ function init(modules: { typescript: typeof import("typescript/lib/tsserverlibra
             sortText: ind.toString().padStart(3, '0'),
             sourceDisplay: [{
               kind: 'text',
-              text:  getDisplayText(themeProperty, value, propertyName)
+              text:  getDisplayText(themeProperty, value)
             }]
           })
         })
