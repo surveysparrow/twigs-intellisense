@@ -3,7 +3,7 @@
   "publisher": "SurveySparrow",
   "displayName": "Twigs Intellisense",
   "description": "Twigs Intellisense tooling for VS Code",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.86.0"
   },
@@ -16,7 +16,7 @@
     "Other"
   ],
   "activationEvents": [
-    "onStartupFinished" 
+    "onStartupFinished"
   ],
   "main": "./src/extension.js",
   "license": "MIT",
@@ -329,16 +329,13 @@
     "pretest": "npm run lint",
     "test": "vscode-test"
   },
-  "dependencies": {
-    "twigs-intellisense-plugin": "*"
-  },
   "devDependencies": {
-    "@types/vscode": "^1.86.0",
     "@types/mocha": "^10.0.6",
     "@types/node": "18.x",
-    "eslint": "^8.56.0",
-    "typescript": "^5.3.3",
+    "@types/vscode": "^1.86.0",
     "@vscode/test-cli": "^0.0.4",
-    "@vscode/test-electron": "^2.3.9"
+    "@vscode/test-electron": "^2.3.9",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3"
   }
 }
