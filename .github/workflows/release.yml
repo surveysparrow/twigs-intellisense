@@ -31,10 +31,10 @@ jobs:
         with:
           pat: ${{ secrets.VSCODE_MARKETPLACE_TOKEN }}
           packagePath: twigs-intellisense-*.vsix
+          registryUrl: https://marketplace.visualstudio.com/
       - name: Publish to Open VSX
         uses: HaaLeo/publish-vscode-extension@v2
         with:
           pat: ${{ secrets.OPEN_VSX_TOKEN }}
           packagePath: twigs-intellisense-*.vsix
-          registryUrl: https://open-vsx.org
       
