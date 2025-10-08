@@ -1,3 +1,5 @@
+name: Publish to VS Code Marketplace and Open VSX
+
 on:
   workflow_dispatch:
 
