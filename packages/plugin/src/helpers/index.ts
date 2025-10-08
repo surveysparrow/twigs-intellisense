@@ -78,23 +78,23 @@ function getMainConfig(configPath: string) {
   return configObj;
 }
 
-function getDisplayText(themeProperty: string, value: string, propertyName: string) {
+function getDisplayText(themeProperty: string, value: string) {
   const { space, radii, fontSizes, lineHeights } = themeConstants
   let text = '';
 
   if (typeof value === 'string' || typeof value === 'number') {
     if ([space, radii, fontSizes, lineHeights].includes(themeProperty)) {
       const pxValue = remOrPercentToPx(value);
-      text = `${propertyName}: ${value} ${pxValue !== -1 ? `/* ${pxValue}px */` : ''}`;
+      text = pxValue !== -1 ? `${pxValue}px (${value})` : `${value}`;
     } else {
-      text = `${propertyName}: ${value}`;
+      text = `${value}`;
     }
   }
 
   return text;
 }
 
-function getModifiedPriorEntries(entries: CompletionEntry[], themeObj: Record<string, any>, themeProperty: string, propertyName: string, extendedProperties: Record<any, any>) {
+function getModifiedPriorEntries(entries: CompletionEntry[], themeObj: Record<string, any>, themeProperty: string, extendedProperties: Record<any, any>) {
   return entries.map((entry, ind) => {
     const name = entry.name.replace('$', '');
     // Get the extended properties
@@ -113,7 +113,7 @@ function getModifiedPriorEntries(entries: CompletionEntry[], themeObj: Record<st
     };
 
     if (value) {
-      const text = getDisplayText(themeProperty, value, propertyName)
+      const text = getDisplayText(themeProperty, value)
       // Modify the source display to show the value
       if (themeProperty === themeConstants.colors) {
         entry.kindModifiers = 'color'

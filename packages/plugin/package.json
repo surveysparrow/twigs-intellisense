@@ -1,6 +1,6 @@
 {
   "name": "twigs-intellisense-plugin",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Provides intellisense for the Twigs components",
   "main": "./out/index.js",
   "engines": {
