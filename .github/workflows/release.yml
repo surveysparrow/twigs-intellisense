@@ -19,6 +19,7 @@ jobs:
         with:
           pat: ${{ secrets.OPEN_VSX_TOKEN }}
           dryRun: true
+          packagePath: packages/extension
       - name: Publish to VS Code Marketplace
         uses: HaaLeo/publish-vscode-extension@v2
         with:
