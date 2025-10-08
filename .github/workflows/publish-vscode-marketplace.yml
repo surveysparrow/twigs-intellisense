@@ -1,0 +1,21 @@
+name: Publish to VS Code Marketplace
+
+on:
+  workflow_dispatch:
+
+jobs:
+  publish-vscode-marketplace:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 22
+      - run: npm ci
+      - run: npm run package:prepare
+      - name: Publish to VS Code Marketplace
+        uses: HaaLeo/publish-vscode-extension@v2
+        with:
+          pat: ${{ secrets.VSCODE_MARKETPLACE_TOKEN }}
+          packagePath: packages/extension
+          registryUrl: https://marketplace.visualstudio.com/
