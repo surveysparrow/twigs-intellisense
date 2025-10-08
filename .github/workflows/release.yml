@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  publish-vsix:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -12,29 +12,19 @@ jobs:
         with:
           node-version: 22
       - run: npm ci
-      - run: npm run package
-      - uses: actions/upload-artifact@v4
+      - run: npm run package:prepare
+      - name: Publish to Open VSX
+        uses: HaaLeo/publish-vscode-extension@v2
+        id: publishToOpenVSX
         with:
-          name: twigs-intellisense-extension
-          path: packages/extension/twigs-intellisense-*.vsix
-  publish-vsix:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/download-artifact@v4
-        with:
-          name: twigs-intellisense-extension
-          path: .
+          pat: ${{ secrets.OPEN_VSX_TOKEN }}
+          dryRun: true
       - name: Publish to VS Code Marketplace
         uses: HaaLeo/publish-vscode-extension@v2
         with:
           pat: ${{ secrets.VSCODE_MARKETPLACE_TOKEN }}
-          packagePath: twigs-intellisense-*.vsix
+          packagePath: ${{ steps.publishToOpenVSX.outputs.vsixPath }}
           registryUrl: https://marketplace.visualstudio.com/
-      - name: Publish to Open VSX
-        uses: HaaLeo/publish-vscode-extension@v2
-        with:
-          pat: ${{ secrets.OPEN_VSX_TOKEN }}
-          packagePath: twigs-intellisense-*.vsix
+          dryRun: true
+      
       

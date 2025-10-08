@@ -9,6 +9,7 @@
   },
   "scripts": {
     "build-plugin": "cd packages/plugin && npm run build",
+    "package:prepare": "cd packages/plugin && npm run build && npm pack && cd ../extension && npm install ../plugin/twigs-intellisense-plugin-*.tgz --no-save",
     "package": "cd packages/plugin && npm run build && npm pack && cd ../extension && npm install ../plugin/twigs-intellisense-plugin-*.tgz --no-save && vsce package"
   }
 }
