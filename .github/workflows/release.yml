@@ -1,0 +1,38 @@
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - run: npm ci
+      - run: npm run package
+      - uses: actions/upload-artifact@v3
+        with:
+          name: twigs-intellisense-extension
+          path: packages/extension/twigs-intellisense-*.vsix
+  publish-vsix:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/download-artifact@v3
+        with:
+          name: twigs-intellisense-extension
+          path: .
+      - name: Publish to VS Code Marketplace
+        uses: HaaLeo/publish-vscode-extension@v2
+        with:
+          pat: ${{ secrets.VSCODE_MARKETPLACE_TOKEN }}
+          packagePath: twigs-intellisense-*.vsix
+      - name: Publish to Open VSX
+        uses: HaaLeo/publish-vscode-extension@v2
+        with:
+          pat: ${{ secrets.OPEN_VSX_TOKEN }}
+          packagePath: twigs-intellisense-*.vsix
+          registryUrl: https://open-vsx.org
+      
