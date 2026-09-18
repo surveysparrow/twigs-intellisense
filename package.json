@@ -1,6 +1,16 @@
 {
   "name": "@sparrowengg/twigs-intellisense-extension",
   "private": true,
+  "description": "Monorepo for the Twigs IntelliSense VS Code extension and its TypeScript language-server plugin",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/surveysparrow/twigs-intellisense.git"
+  },
+  "bugs": {
+    "url": "https://github.com/surveysparrow/twigs-intellisense/issues"
+  },
+  "homepage": "https://github.com/surveysparrow/twigs-intellisense#readme",
   "workspaces": [
     "packages/*"
   ],
@@ -8,6 +18,8 @@
     "vsce": "^2.15.0"
   },
   "scripts": {
+    "lint": "cd packages/extension && npm run lint",
+    "test": "cd packages/extension && npm test",
     "build-plugin": "cd packages/plugin && npm run build",
     "package:prepare": "cd packages/plugin && npm run build && npm pack && cd ../extension && npm install ../plugin/twigs-intellisense-plugin-*.tgz --no-save",
     "package": "cd packages/plugin && npm run build && npm pack && cd ../extension && npm install ../plugin/twigs-intellisense-plugin-*.tgz --no-save && vsce package"

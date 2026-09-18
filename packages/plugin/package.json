@@ -1,21 +1,40 @@
 {
   "name": "twigs-intellisense-plugin",
   "version": "0.0.3",
-  "description": "Provides intellisense for the Twigs components",
+  "description": "TypeScript language-server plugin that provides IntelliSense for Twigs theme variables",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/surveysparrow/twigs-intellisense.git",
+    "directory": "packages/plugin"
+  },
+  "bugs": {
+    "url": "https://github.com/surveysparrow/twigs-intellisense/issues"
+  },
+  "homepage": "https://github.com/surveysparrow/twigs-intellisense/tree/master/packages/plugin#readme",
   "main": "./out/index.js",
   "engines": {
     "vscode": "^1.58.0"
   },
   "files": [
-    "./out"
+    "./out",
+    "CHANGELOG.md"
   ],
   "scripts": {
     "dev": "tsc -w",
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "twigs",
+    "intellisense",
+    "typescript-plugin",
+    "tsserver",
+    "autocomplete",
+    "design-tokens",
+    "stitches",
+    "surveysparrow"
+  ],
+  "author": "SurveySparrow",
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
