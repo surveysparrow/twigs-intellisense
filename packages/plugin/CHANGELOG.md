@@ -17,6 +17,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- Compile target pinned to `ES2022` instead of `ESNext`, so emitted syntax stays
+  within what the Node version bundled with VS Code can parse. `ESNext` tracks
+  whatever the installed TypeScript supports, which could silently raise the
+  runtime requirement. Current output is unchanged.
 - `npm run build` now clears `out/` first. Compiled files whose sources had been
   deleted were lingering in the directory and being published.
 - A malformed or partially-saved config no longer throws. Reload failures inside

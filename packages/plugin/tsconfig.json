@@ -3,7 +3,7 @@
         "src/**"
     ],
     "compilerOptions": {
-        "target": "ESNext", /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
+        "target": "ES2022", /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
         "module": "commonjs", /* Specify what module code is generated. */
         "sourceMap": true, /* Create source map files for emitted JavaScript files. */
         "outDir": "./out", /* Specify an output folder for all emitted files. */
