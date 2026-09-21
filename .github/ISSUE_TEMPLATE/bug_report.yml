@@ -14,7 +14,7 @@ body:
     attributes:
       label: What happened?
       description: What you expected, and what you got instead.
-      placeholder: Typing `css={{ padding: '$' }}` shows no suggestions.
+      placeholder: "Typing `css={{ padding: '$' }}` shows no suggestions."
     validations:
       required: true
 

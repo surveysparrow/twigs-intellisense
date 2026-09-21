@@ -4,5 +4,5 @@ contact_links:
     url: https://github.com/surveysparrow/twigs
     about: Issues with Twigs components or theming itself, not the editor tooling.
   - name: Twigs documentation
-    url: https://twigs.surveysparrow.com/docs
+    url: https://twigs.surveysparrow.com/docs/getting-started
     about: How to install Twigs and write a theme config.
