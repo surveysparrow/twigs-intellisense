@@ -1,6 +1,6 @@
 import { CompletionEntry } from 'typescript';
 import { colorProperties, space, borderSizing, radii, sizes, borderStyle, themeConstants } from '../constants';
-import { getConfigObject, getPropertyNameWithCheck, mergeObjects, parseFile, remOrPercentToPx } from '../utils';
+import { getPropertyNameWithCheck, mergeObjects, parseDefaultExportObject, parseNamedObject, parseFile, remOrPercentToPx } from '../utils';
 import { otherCssPropertiesConstants } from '../constants/theme-constants';
 
 // Helpers
@@ -64,18 +64,16 @@ function getTwigsConfig(configPath: string) {
   const twigsConfigContents = parseFile(configPath);
   if (!twigsConfigContents) return null;
 
-  const regex = /export\s*default\s*({[\s\S]*})[;}]?/;
-  const configObj = getConfigObject(twigsConfigContents, regex);
-  return configObj;
+  // Read `export default { ... }` statically. The config is never executed.
+  return parseDefaultExportObject(configPath, twigsConfigContents);
 }
 
 function getMainConfig(configPath: string) {
   const mainConfigContents = parseFile(configPath);
-  if (!mainConfigContents) return -1;
+  if (!mainConfigContents) return null;
 
-  const regex = /const\s*defaultTheme\s*=\s*(\{[\s\S]+?\});/;
-  const configObj = getConfigObject(mainConfigContents, regex);
-  return configObj;
+  // Read `const defaultTheme = { ... }` out of the shipped Twigs config statically.
+  return parseNamedObject(configPath, mainConfigContents, 'defaultTheme');
 }
 
 function getDisplayText(themeProperty: string, value: string) {

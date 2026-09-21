@@ -89,24 +89,31 @@ function init(modules: { typescript: typeof import("typescript/lib/tsserverlibra
 
     // Watch the directory for changes
     fs.watch(twigsConfigDir, (eventType, filename) => {
-      // If a file was added or changed and the file is twigsConfigPath
-      if ((eventType === 'rename' || eventType === 'change') && (filename === path.basename(twigsConfigPathJs) || filename === path.basename(twigsConfigPathTs))) {
-        // Initially let the config path be twigsConfigPathTs
-        let configPathToPick = twigsConfigPathTs;
-        // But if twigs.config.js file exists then pick it from there
-        if (fs.existsSync(twigsConfigPathJs)) {
-          configPathToPick = twigsConfigPathJs;
-        }
+      // Anything thrown here is an uncaught exception in an async callback,
+      // which would take down the whole TypeScript server process. Keep the
+      // stale theme instead and log it.
+      try {
+        // If a file was added or changed and the file is twigsConfigPath
+        if ((eventType === 'rename' || eventType === 'change') && (filename === path.basename(twigsConfigPathJs) || filename === path.basename(twigsConfigPathTs))) {
+          // Initially let the config path be twigsConfigPathTs
+          let configPathToPick = twigsConfigPathTs;
+          // But if twigs.config.js file exists then pick it from there
+          if (fs.existsSync(twigsConfigPathJs)) {
+            configPathToPick = twigsConfigPathJs;
+          }
 
-        // If the file exists
-        if (fs.existsSync(configPathToPick)) {
-          // Update the twigsConfig object
-          twigsConfig = getTwigsConfig(configPathToPick);
-          themeObj = getThemeObject(twigsConfig, mainConfig);
-        } else {
-          twigsConfig = null;
-          themeObj = getThemeObject(null, mainConfig);
+          // If the file exists
+          if (fs.existsSync(configPathToPick)) {
+            // Update the twigsConfig object
+            twigsConfig = getTwigsConfig(configPathToPick);
+            themeObj = getThemeObject(twigsConfig, mainConfig);
+          } else {
+            twigsConfig = null;
+            themeObj = getThemeObject(null, mainConfig);
+          }
         }
+      } catch (err) {
+        info.project.projectService.logger.info(`twigs-intellisense: failed to reload twigs config: ${err}`);
       }
     });
 

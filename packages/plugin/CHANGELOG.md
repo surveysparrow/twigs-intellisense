@@ -7,6 +7,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.0.3] - Unreleased
 
+### Security
+
+- **Twigs config files are no longer executed.** `twigs.config.{js,ts}` and the
+  Twigs `stitches.config.js` were previously read by matching a regex and passing
+  the result to `eval()`. Opening a project with a crafted config ran arbitrary
+  code inside the TypeScript server process. Both files are now parsed with the
+  TypeScript compiler and read as literal values only.
+
+### Fixed
+
+- `npm run build` now clears `out/` first. Compiled files whose sources had been
+  deleted were lingering in the directory and being published.
+- A malformed or partially-saved config no longer throws. Reload failures inside
+  the config file watcher are caught and logged instead of crashing the
+  TypeScript server process.
+- `getMainConfig` returns `null` instead of `-1` when the Twigs theme cannot be
+  read, so the caller's guard actually stops initialization rather than letting a
+  truthy sentinel through.
+
 ### Changed
 
 - Completion detail text no longer repeats the CSS property name. Values are now
