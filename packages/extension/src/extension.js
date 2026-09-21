@@ -3,12 +3,38 @@
 
 // Import the module and reference it with the alias vscode in your code below
 const vscode = require('vscode');
-const fs = require('fs');
-const path = require('path');
 
 const packageJson = require('../package.json');
 
 const commands = packageJson.contributes.commands;
+
+const TWIGS_PACKAGE = '@sparrowengg/twigs-react';
+
+/**
+ * Look for a package.json in the workspace that depends on Twigs.
+ *
+ * Every package.json is checked rather than just the workspace root: in a
+ * monorepo the dependency is usually declared by a workspace package, not at
+ * the top level. Both dependencies and devDependencies count.
+ */
+async function isTwigsProject() {
+  const files = await vscode.workspace.findFiles('**/package.json', '**/node_modules/**');
+
+  for (const file of files) {
+    try {
+      const contents = await vscode.workspace.fs.readFile(file);
+      const pkg = JSON.parse(Buffer.from(contents).toString('utf8'));
+
+      if (pkg.dependencies?.[TWIGS_PACKAGE] || pkg.devDependencies?.[TWIGS_PACKAGE]) {
+        return true;
+      }
+    } catch (err) {
+      // Unreadable or malformed package.json — keep looking.
+    }
+  }
+
+  return false;
+}
 
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
@@ -16,7 +42,7 @@ const commands = packageJson.contributes.commands;
 /**
  * @param {vscode.ExtensionContext} context
  */
-function activate(context) {
+async function activate(context) {
 
   const workspaceFolders = vscode.workspace.workspaceFolders;
 
@@ -25,33 +51,20 @@ function activate(context) {
     return;
   }
 
-  const packageJsonPath = path.join(workspaceFolders[0].uri.fsPath, 'package.json');
+  if (!await isTwigsProject()) {
+    // The twigs component library is not installed in this workspace.
+    return;
+  }
 
-  fs.readFile(packageJsonPath, 'utf8', (err, data) => {
-    if (err) {
-      // Failed to read package.json
-      return;
-    }
+  vscode.window.showInformationMessage('Twigs intellisense is now active in your project!');
 
-    const packageJson = JSON.parse(data);
-
-    if (!packageJson.dependencies || !packageJson.dependencies?.['@sparrowengg/twigs-react']) {
-      // The twigs component library is not installed in this workspace.
-      return;
-    }
-        
-    // Intellisense extension activation code here
-
-    vscode.window.showInformationMessage('Twigs intellisense is now active in your project!');
-
-    commands.forEach(command => {
-      const { command: commandName, link } = command;
-      const commandDisposable = vscode.commands.registerCommand(commandName, () => {
-        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(link));
-      });
-      context.subscriptions.push(commandDisposable);
-    })
-  });
+  commands.forEach(command => {
+    const { command: commandName, link } = command;
+    const commandDisposable = vscode.commands.registerCommand(commandName, () => {
+      vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(link));
+    });
+    context.subscriptions.push(commandDisposable);
+  })
 }
 
 // This method is called when your extension is deactivated

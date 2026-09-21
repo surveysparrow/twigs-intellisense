@@ -17,6 +17,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- Twigs is now found in monorepos. The project root was located by walking up to
+  the first directory containing a `node_modules` folder, which stops at a
+  workspace package holding only its non-hoisted dependencies. The search now
+  looks for the directory whose `node_modules` actually contains
+  `@sparrowengg/twigs-react`.
+- `twigs.config.{js,ts}` is looked up independently of that directory, so a
+  config inside a workspace package is picked up when Twigs is installed at the
+  repository root.
 - Compile target pinned to `ES2022` instead of `ESNext`, so emitted syntax stays
   within what the Node version bundled with VS Code can parse. `ESNext` tracks
   whatever the installed TypeScript supports, which could silently raise the
@@ -29,6 +37,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `getMainConfig` returns `null` instead of `-1` when the Twigs theme cannot be
   read, so the caller's guard actually stops initialization rather than letting a
   truthy sentinel through.
+
+### Added
+
+- Diagnostic logging to the TS Server Log, prefixed `twigs-intellisense:`. Every
+  path that stops initialization now says why — no theme found, no config, empty
+  merge — where previously they all failed silently.
 
 ### Changed
 

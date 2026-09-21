@@ -17,6 +17,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- The extension now activates in monorepos. It checked only the workspace root's
+  `package.json` for `@sparrowengg/twigs-react`, so a repository declaring Twigs
+  in a workspace package got no Twigs Docs commands and no completions. Every
+  `package.json` in the workspace is now checked, and `devDependencies` counts
+  alongside `dependencies`.
 - A malformed or partially-saved Twigs config no longer crashes the TypeScript
   server; completions fall back to the previously loaded theme.
 

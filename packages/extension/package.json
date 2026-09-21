@@ -3,7 +3,7 @@
   "publisher": "SurveySparrow",
   "displayName": "Twigs Intellisense",
   "description": "Twigs Intellisense tooling for VS Code",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "engines": {
     "vscode": "^1.86.0"
   },

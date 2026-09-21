@@ -12,15 +12,16 @@ import {
   getDisplayText,
 } from './helpers';
 import { themeConstants } from "./constants";
-import { findRootDir } from "./utils/find-root-directory";
+import { findRootDir, findConfigDir } from "./utils/find-root-directory";
 
 function init(modules: { typescript: typeof import("typescript/lib/tsserverlibrary") }) {
 
   function create(info: ts.server.PluginCreateInfo) {
-    // Diagnostic logging
-    info.project.projectService.logger.info(
-      "I'm getting set up now! Check the log for this message."
-    );
+    // Every message is prefixed so it can be grepped out of the TS Server Log,
+    // which is the only diagnostic channel available once the plugin ships.
+    const log = (message: string) => {
+      info.project.projectService.logger.info(`twigs-intellisense: ${message}`);
+    };
 
     // Set up decorator object
     const proxy: ts.LanguageService = Object.create(null);
@@ -34,14 +35,21 @@ function init(modules: { typescript: typeof import("typescript/lib/tsserverlibra
     const currDir = info.project.getCurrentDirectory();
 
     if (!currDir) {
-      // No Directory found
+      log('no project directory reported by the language service, giving up');
       return;
     }
 
-    // Get the root directory
+    // Get the directory whose node_modules holds Twigs
     const rootDir = findRootDir(currDir);
 
-    const projectDir = rootDir ?? currDir;
+    if (!rootDir) {
+      log(`@sparrowengg/twigs-react not found in any node_modules above ${currDir} — is it installed?`);
+      return;
+    }
+
+    const projectDir = rootDir;
+
+    log(`initializing, project directory ${projectDir}`);
 
     // Get the main config path
     const mainConfigPath = path.join(
@@ -54,15 +62,22 @@ function init(modules: { typescript: typeof import("typescript/lib/tsserverlibra
       'stitches.config.js'
     );
 
+    // The config file and node_modules are not always in the same place. In a
+    // monorepo, Twigs is usually installed at the repository root while each app
+    // keeps its own twigs.config, so search for the config on its own. If there
+    // isn't one, point at the project directory anyway to give the watcher below
+    // somewhere to sit.
+    const configDir = findConfigDir(currDir) ?? projectDir;
+
     // Get the twigs js config path
     const twigsConfigPathJs = path.join(
-      projectDir,
+      configDir,
       'twigs.config.js'
     );
 
     // Get the twigs ts config path
     const twigsConfigPathTs = path.join(
-      projectDir,
+      configDir,
       'twigs.config.ts'
     );
 
@@ -77,12 +92,24 @@ function init(modules: { typescript: typeof import("typescript/lib/tsserverlibra
     let twigsConfig = getTwigsConfig(twigsConfigPath);
     const mainConfig = getMainConfig(mainConfigPath);
 
-    if (!mainConfig) return;
+    if (!mainConfig) {
+      log(`could not read the Twigs theme from ${mainConfigPath}`);
+      return;
+    }
+
+    if (!twigsConfig) {
+      log(`no readable config at ${twigsConfigPath}, using the default theme only`);
+    }
 
     // Get the merged theme object
     let themeObj = getThemeObject(twigsConfig, mainConfig);
 
-    if (!themeObj) return;
+    if (!themeObj) {
+      log('merged theme came back empty, giving up');
+      return;
+    }
+
+    log(`ready, ${Object.keys(themeObj).length} token groups loaded`);
 
     // Watch the twigs config file for changes and update the twigsConfig object
     const twigsConfigDir = path.dirname(twigsConfigPath);
@@ -113,7 +140,7 @@ function init(modules: { typescript: typeof import("typescript/lib/tsserverlibra
           }
         }
       } catch (err) {
-        info.project.projectService.logger.info(`twigs-intellisense: failed to reload twigs config: ${err}`);
+        log(`failed to reload twigs config: ${err}`);
       }
     });
 
