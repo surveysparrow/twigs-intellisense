@@ -1,0 +1,70 @@
+name: Bug report
+description: Something isn't working — missing completions, wrong values, crashes
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before filing, a quick check that resolves most reports:
+
+        - `@sparrowengg/twigs-react` must be in `dependencies`, not `devDependencies`.
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What you expected, and what you got instead.
+      placeholder: Typing `css={{ padding: '$' }}` shows no suggestions.
+    validations:
+      required: true
+
+  - type: textarea
+    id: config
+    attributes:
+      label: Your twigs.config.js / twigs.config.ts
+      description: The whole file, or the relevant part. Redact anything private.
+      render: typescript
+    validations:
+      required: true
+
+  - type: input
+    id: versions
+    attributes:
+      label: Versions
+      description: Extension, `@sparrowengg/twigs-react`, and TypeScript.
+      placeholder: "extension 0.0.2, twigs-react 0.38.1, typescript 5.3.3"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: ts-version-source
+    attributes:
+      label: Which TypeScript is VS Code using?
+      description: |
+        Run "TypeScript: Select TypeScript Version" from the command palette to check.
+      options:
+        - Workspace version
+        - VS Code's bundled version
+        - Not sure
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: VS Code and OS version
+      placeholder: "VS Code 1.86.0, macOS 14.3"
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: TS Server Log
+      description: |
+        Set `"typescript.tsserver.log": "verbose"` in settings, reload the window, then run
+        "TypeScript: Open TS Server Log" from the command palette. Paste any lines mentioning
+        `twigs-intellisense-plugin`. This is usually what identifies the problem.
+      render: shell
+    validations:
+      required: false
