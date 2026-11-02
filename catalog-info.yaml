@@ -25,4 +25,4 @@ metadata:
 spec:
   type: tool
   lifecycle: production
-  owner: group:surveysparrow/twigs-developers
+  owner: group:surveysparrow/surveysparrow
